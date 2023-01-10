@@ -3,17 +3,104 @@
 @tailwind utilities;
 
 /************************************ Base *************************************/
+@layer base {
+  *::-webkit-scrollbar {
+    @apply w-2 h-2 bg-gray-200 dark:bg-theme_background;
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-gray-200 dark:bg-theme_background border border-slate-100;
+  }
+  *::-webkit-scrollbar-button {
+    display: none;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-gray-600 rounded-xl;
+  }
 
-/************************************ Table ************************************/
+  body {
+    @apply text-gray-700 dark:text-gray-300 text-sm bg-gray-50 dark:bg-theme_background;
+  }
+
+  /* Table */
+  table {
+    @apply bg-opacity-50 text-sm text-left leading-4 font-medium text-gray-500 tracking-wider dark:text-gray-400; /*lg:table-fixed*/
+  }
+
+  table thead tr {
+    @apply bg-gray-200 bg-opacity-70 dark:bg-opacity-70 dark:bg-gray-900 leading-4 font-medium text-gray-500 
+    uppercase tracking-wider dark:text-gray-300 text-xs border-b dark:border-gray-800;
+  }
+
+  table thead tr th,
+  table thead tr td {
+    @apply px-4 py-4;
+  }
+
+  table tbody tr td {
+    @apply px-4 py-5;
+  }
+
+  table tbody tr {
+    @apply bg-white dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-gray-600 border-b border-gray-200 dark:border-gray-800 duration-150 ease-out;
+  }
+
+  table tbody tr:nth-of-type(2n) {
+    @apply bg-opacity-50 dark:bg-opacity-75;
+  }
+}
 
 /************************************ Layout ***********************************/
+.layout {
+  @apply h-screen flex overflow-hidden; /*bg-custom-gradient dark:bg-custom-gradient-dark bg-cover bg-no-repeat bg-top*/
+}
+
+.layout__content {
+  @apply flex flex-col w-0 flex-1 overflow-hidden;
+}
 
 /************************************ Sidebar **********************************/
+.sidebar {
+  @apply z-50 hidden md:flex md:flex-shrink-0 border-r border-gray-300 dark:border-slate-800  bg-gray-50 dark:bg-theme_background  dark:md:bg-transparent; 
+}
+
+.nav__link {
+  @apply my-3 flex items-center px-2 py-3 text-sm leading-5 font-medium text-gray-900 dark:text-gray-300 rounded-md
+    hover:bg-gray-100 hover:border-gray-300 dark:hover:bg-slate-900 focus:outline-none transition ease-in-out duration-150;
+}
+
+.mobile {
+  @apply w-80;
+}
+
+.nav__link.active {
+  @apply rounded-md dark:bg-slate-800 dark:text-gray-200 bg-gray-200/75;
+}
+
+.logo {
+  @apply cursor-pointer flex items-center h-16 flex-shrink-0 px-4 border-b border-gray-300 dark:border-slate-800;
+}
+
+.side-menu {
+  @apply flex-1 px-2 py-4;
+}
 
 /************************************ Topbar ***********************************/
- 
+.topbar {
+  @apply relative z-10 flex flex-shrink-0 h-16 text-gray-900 border-b border-gray-300 dark:border-slate-800;
+}
+
+.toggle-icon {
+  @apply px-4 text-gray-500 focus:outline-none;
+}
+
 /************************************ Main Content *****************************/
+.main {
+  @apply flex-1 relative z-0 overflow-y-auto focus:outline-none px-6 lg:px-12 pt-8 pb-10;
+}
 
 /************************************ Global ***********************************/
+.table-container {
+  @apply align-middle min-w-full shadow rounded-lg border dark:border-gray-900 overflow-auto;
+}
 
 /************************************ Forms ************************************/
