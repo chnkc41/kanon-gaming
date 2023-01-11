@@ -1,5 +1,5 @@
 import Layout from 'features/layout/Layout';
-import NotFound from 'features/layout/NotFound';
+import NotFound from 'features/errorPages/NotFound';
 import Question1 from 'features/question1/Question1';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
