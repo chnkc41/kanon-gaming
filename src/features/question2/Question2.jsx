@@ -7,19 +7,27 @@ import TableList from 'components/tables/KanonTable';
 
 const Question2 = () => {
   const [viewState, setViewState] = useState(globalViewStates.LOADING);
+  const [countryNames] = useState(['Turkey', 'Malta', 'Germany', 'Ireland']);
   const [countryList, setCountryList] = useState([]);
 
   useEffect(() => {
-    fetchCountries().then(
+    fetchCountries(countryNames).then(
       ({ success, payload }) => {
         if (!success) {
           setViewState(globalViewStates.ERROR);
           return;
-        } 
+        }
 
-        const { countries } = payload; 
+        const { countries } = payload;
 
-        setCountryList(countries);
+        const countryListData = countries.filter((item) => {
+          for (let i = 0; i < countryNames.length; i++) {
+            if (item.name === countryNames[i]) return true;
+          }
+          return false;
+        });
+
+        setCountryList(countryListData);
         setViewState(globalViewStates.DONE);
       },
       (err) => {
@@ -31,18 +39,16 @@ const Question2 = () => {
   if (viewState === globalViewStates.LOADING) {
     return <Loading />;
   }
-  
+
   if (viewState === globalViewStates.ERROR) {
-    return ( 
-      <Error />
-    );
+    return <Error />;
   }
 
   return (
     <>
       <TableList list={countryList} />
     </>
-  )
-}
+  );
+};
 
-export default Question2
+export default Question2;
