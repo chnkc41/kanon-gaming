@@ -2,6 +2,7 @@
 
  export const urls = {
   URL_COUNTRY: `${API_ROOT}/v2/name`, 
+  URL_COUNTRIES: `${API_ROOT}/v2/all`, 
  };
  
  export const globalViewStates = {
