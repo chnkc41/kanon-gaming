@@ -11,7 +11,7 @@ const KanonTable = ({ list, filter }) => {
     if (containsText === '' || containsText === null) {
       setCountryList(list);
     } else {
-      const filteredList = list.filter((item) => item.name.toLowerCase() === containsText.toLowerCase());
+      const filteredList = list.filter((item) => item.name.toLowerCase() === containsText.trim().toLowerCase());
       setCountryList(filteredList);
     }
   };
