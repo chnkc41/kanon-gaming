@@ -1,8 +1,9 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from 'features/layout/Layout';
 import NotFound from 'features/errorPages/NotFound';
 import Question1 from 'features/question1/Question1';
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Question2 from 'features/question2/Question2';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route exact path="/" element={<Layout />}>
             <Route exact path="" element={<Question1 />} />
             <Route exact path="question1" element={<Question1 />} />
+            <Route exact path="question2" element={<Question2 />} />
             <Route exact path="*" element={<NotFound />} />
           </Route>
         </Routes>
