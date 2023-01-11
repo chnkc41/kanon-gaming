@@ -1,0 +1,117 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "bruno@email.com",
+      "password": "bruno"
+    },
+    {
+      "id": 2,
+      "email": "techie@email.com",
+      "password": "techie"
+    },
+    {
+      "id": 3,
+      "email": "nilson@email.com",
+      "password": "nilson"
+    },
+    {
+      "id": 4,
+      "email": "nilson1@email.com",
+      "password": "nilson"
+    },
+    {
+      "id": 5,
+      "email": "nilson2@email.com",
+      "password": "nilson"
+    },
+    {
+      "id": 6,
+      "email": "nilson3@email.com",
+      "password": "nilson"
+    },
+    {
+      "id": 7,
+      "email": "nilson4@email.com",
+      "password": "nilson"
+    },
+    {
+      "id": 8,
+      "email": "nilson7@email.com",
+      "password": "nilson"
+    },
+    {
+      "id": 9,
+      "email": "nilson8@email.com",
+      "password": "nilson"
+    },
+    {
+      "id": 10,
+      "email": "cihankoc41@gmail.com",
+      "password": "istanbul"
+    },
+    {
+      "id": 11,
+      "email": "cihankoc41@gmail.com",
+      "password": "istanbul"
+    },
+    {
+      "id": 12,
+      "email": "cihankoc1@gmail.com",
+      "password": "istanbul"
+    },
+    {
+      "id": 13,
+      "email": "test1@gmail.com",
+      "password": "test1"
+    },
+    {
+      "id": 14,
+      "email": "test2@gmail.com",
+      "password": "test2"
+    },
+    {
+      "id": 15,
+      "email": "test3@gmail.com",
+      "password": "test3"
+    },
+    {
+      "id": 16,
+      "email": "test4@gmail.com",
+      "password": "test4"
+    },
+    {
+      "id": 17,
+      "email": "test5@gmail.com",
+      "password": "test5"
+    },
+    {
+      "id": 18,
+      "email": "test6@gmail.com",
+      "password": "test5"
+    },
+    {
+      "id": 19,
+      "email": "test7@gmail.com",
+      "password": "test5"
+    },
+    {
+      "name": "test8",
+      "email": "test8@test8.com",
+      "password": "test8",
+      "id": 20
+    },
+    {
+      "name": "test9",
+      "email": "test9@test9.com",
+      "password": "test9",
+      "id": 21
+    },
+    {
+      "name": "test10",
+      "email": "test10@test10.com",
+      "password": "test9",
+      "id": 22
+    }
+  ]
+}

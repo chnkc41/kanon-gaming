@@ -23,7 +23,7 @@
 
   /* Table */
   table {
-    @apply bg-opacity-50 text-sm text-left leading-4 font-medium text-gray-500 tracking-wider dark:text-gray-400 shadow-md; 
+    @apply bg-opacity-50 text-sm text-left leading-4 font-medium text-gray-500 tracking-wider dark:text-gray-400 shadow-md;
   }
 
   table thead tr {
@@ -108,6 +108,10 @@
 }
 
 /************************************ Forms ************************************/
+.input-main {
+  @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none 
+  focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 dark:text-gray-900;
+}
 
 .input-borderless {
   @apply w-28 pl-2 pt-2 pb-1.5 sm:leading-5 bg-transparent cursor-pointer text-sm dark:text-gray-300 border-b outline-none border-sky-500 focus:dark:border-cyan-800;
@@ -116,4 +120,14 @@
 .btn-basic {
   @apply flex items-center justify-center w-auto rounded-md transition duration-150 ease-in-out text-xs p-2 bg-gray-50 dark:bg-transparent 
       dark:text-gray-200 border border-gray-300 dark:border-gray-700 outline-none px-3 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer;
+}
+
+.btn-main-outline {
+  @apply inline-flex items-center justify-center text-sm py-1.5 px-3 leading-5 rounded-md font-bold
+    bg-white focus:outline-none ease-out text-center cursor-pointer text-sky-600 hover:text-sky-500 border border-sky-400;
+}
+
+.btn-login { 
+  @apply w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-sky-500
+  hover:bg-sky-600 focus:outline-none focus:border-sky-600 active:bg-sky-400 transition duration-150 ease-out;
 }
