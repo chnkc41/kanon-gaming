@@ -1,38 +1,61 @@
-import NoData from 'components/noData/NoData';
 import { countryColumns } from 'constants';
-import React from 'react';
+import React, { useState } from 'react';
+import { BiSearch } from 'react-icons/bi';
+import TableBody from './TableBody';
 
-const KanonTable = ({ list }) => {
+const KanonTable = ({ list, filter }) => {
+  let [containsText, setContainsText] = useState('');
+  const [countryList, setCountryList] = useState(list);
+
+  const searchLog = () => {
+    if (containsText === '' || containsText === null) {
+      setCountryList(list);
+    } else {
+      const filteredList = list.filter((item) => item.name.toLowerCase() === containsText.toLowerCase());
+      setCountryList(filteredList);
+    }
+  };
+
   return (
-    <table className="mx-auto text-sm leading-5 text-gray-500 dark:text-gray-400">
-      <thead>
-        <tr>
-          {countryColumns.map((column) => (
-            <th key={column}>{column}</th>
-          ))}
-        </tr>
-      </thead>
+    <div className="table-container">
+      <table className="w-full text-sm leading-5 text-gray-500 dark:text-gray-400">
+        <thead>
+          {filter && (
+            <tr>
+              <th colSpan={8}>
+                <div className="flex items-center justify-start">
+                  <div className="flex items-end">
+                    <span className="mr-3">
+                      <input
+                        value={containsText}
+                        onChange={(e) => {
+                          setContainsText(e.target.value);
+                        }}
+                        placeholder={`Filter by full name`}
+                        className="input-borderless !w-40 text-center"
+                      />
+                    </span>
+                    <span className="btn-basic" onClick={() => searchLog()}>
+                      <BiSearch className="text-base mr-2" />
+                    </span>
+                  </div>
+                </div>
+              </th>
+            </tr>
+          )}
 
-      <tbody>
-        {list.length === 0 ? (
-          <NoData />
-        ) : (
-          list &&
-          list.map((list, i) => {
-            return (
-              <tr key={list.name} className={i % 2 === 0 ? 'table-tr-odd' : 'table-tr-even'}>
-                <td>
-                  <img src={list.flag} alt="Country Flag" width="50px" height="50px" />
-                </td>
-                <td className="px-6 py-4 md:table-cell block">{list.name || ''}</td>
-                <td>{list.capital}</td>
-                <td>{list.region}</td>
-              </tr>
-            );
-          })
-        )}
-      </tbody>
-    </table>
+          <tr>
+            {countryColumns.map((column) => (
+              <th key={column}>{column}</th>
+            ))}
+          </tr>
+        </thead>
+
+        <tbody>
+          <TableBody list={countryList} />
+        </tbody>
+      </table>
+    </div>
   );
 };
 

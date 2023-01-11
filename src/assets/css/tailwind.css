@@ -23,7 +23,7 @@
 
   /* Table */
   table {
-    @apply bg-opacity-50 text-sm text-left leading-4 font-medium text-gray-500 tracking-wider dark:text-gray-400; /*lg:table-fixed*/
+    @apply bg-opacity-50 text-sm text-left leading-4 font-medium text-gray-500 tracking-wider dark:text-gray-400 shadow-md; 
   }
 
   table thead tr {
@@ -60,7 +60,7 @@
 
 /************************************ Sidebar **********************************/
 .sidebar {
-  @apply z-50 hidden md:flex md:flex-shrink-0 border-r border-gray-300 dark:border-slate-800  bg-gray-50 dark:bg-theme_background  dark:md:bg-transparent; 
+  @apply z-50 hidden md:flex md:flex-shrink-0 border-r border-gray-300 dark:border-slate-800  bg-gray-50 dark:bg-theme_background  dark:md:bg-transparent;
 }
 
 .nav__link {
@@ -98,9 +98,22 @@
   @apply flex-1 relative z-0 overflow-y-auto focus:outline-none px-6 lg:px-12 pt-8 pb-10;
 }
 
+.main svg {
+  @apply !m-0;
+}
+
 /************************************ Global ***********************************/
 .table-container {
   @apply align-middle min-w-full shadow rounded-lg border dark:border-gray-900 overflow-auto;
 }
 
 /************************************ Forms ************************************/
+
+.input-borderless {
+  @apply w-28 pl-2 pt-2 pb-1.5 sm:leading-5 bg-transparent cursor-pointer text-sm dark:text-gray-300 border-b outline-none border-sky-500 focus:dark:border-cyan-800;
+}
+
+.btn-basic {
+  @apply flex items-center justify-center w-auto rounded-md transition duration-150 ease-in-out text-xs p-2 bg-gray-50 dark:bg-transparent 
+      dark:text-gray-200 border border-gray-300 dark:border-gray-700 outline-none px-3 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer;
+}
