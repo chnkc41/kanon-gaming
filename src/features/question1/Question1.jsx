@@ -7,18 +7,18 @@ import TableList from 'components/tables/KanonTable';
 
 const Question1 = () => {
   const [viewState, setViewState] = useState(globalViewStates.LOADING);
+  const [countryName] = useState('malta');
   const [countryList, setCountryList] = useState([]);
 
   useEffect(() => {
-    fetchCountry().then(
+    fetchCountry(countryName).then(
       ({ success, payload }) => {
         if (!success) {
           setViewState(globalViewStates.ERROR);
           return;
         }
-       
 
-        const { country } = payload; 
+        const { country } = payload;
 
         setCountryList(country);
         setViewState(globalViewStates.DONE);
@@ -33,18 +33,15 @@ const Question1 = () => {
     return <Loading />;
   }
 
-  
   if (viewState === globalViewStates.ERROR) {
-    return ( 
-      <Error />
-    );
+    return <Error />;
   }
 
   return (
     <>
       <TableList list={countryList} />
     </>
-  )
-}
+  );
+};
 
-export default Question1
+export default Question1;

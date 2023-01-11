@@ -1,14 +1,8 @@
-/**
- *   _|_
- *  /@-@\ Copyright © OpsBeacon, Inc.
- *  \ - /    All rights reserved.
- *   };{
- */
 import axios from 'axios';
 import { urls } from 'constants/index';
 
-const sendFetchUsersRequest = async () => {
-  const url = `${urls.URL_COUNTRY}/malta?fullText=true`
+const sendFetchCountryRequest = async (countryName) => {
+  const url = `${urls.URL_COUNTRY}/${countryName}?fullText=true`;
   try {
     const result = await axios.get(url, {
       withCredentials: true,
@@ -43,4 +37,4 @@ const sendFetchUsersRequest = async () => {
   }
 };
 
-export { sendFetchUsersRequest };
+export { sendFetchCountryRequest };

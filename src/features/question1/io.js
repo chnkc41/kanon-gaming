@@ -1,15 +1,8 @@
-/**
- *   _|_
- *  /@-@\ Copyright © OpsBeacon, Inc.
- *  \ - /    All rights reserved.
- *   };{
- */
+import { sendFetchCountryRequest } from './network';
 
-import { sendFetchUsersRequest } from './network';
-
-const fetchCountry = async () => {
+const fetchCountry = async (countryName) => {
   try {
-    const { success, payload } = await sendFetchUsersRequest();
+    const { success, payload } = await sendFetchCountryRequest(countryName);
 
     if (!success) {
       return {
@@ -25,8 +18,6 @@ const fetchCountry = async () => {
     }
 
     const { country } = payload;
-
-    
 
     return {
       success: true,
