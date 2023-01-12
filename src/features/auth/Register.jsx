@@ -65,7 +65,7 @@ const Register = () => {
         setViewState(globalViewStates.IDLE);
         return;
       } else {
-        setViewState(globalViewStates.REDIRECT_TO_DASHBOARD);
+        setViewState(globalViewStates.REDIRECT);
         Toast.success('You are being redirected to the log in page');
       }
     } catch (ex) {
@@ -74,7 +74,7 @@ const Register = () => {
     }
   };
 
-  if (viewState === globalViewStates.REDIRECT_TO_DASHBOARD) {
+  if (viewState === globalViewStates.REDIRECT) {
     return <Navigate to="/question5" />;
   }
 
