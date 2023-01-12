@@ -1,10 +1,12 @@
 const API_ROOT = 'https://restcountries.com';
-const API_ROOT_AUTH = 'http://localhost:3010';
+const API_ROOT_USERS = 'http://localhost:3010';
+const API_ROOT_USERS_JWT = 'http://localhost:8000';
 
 export const urls = {
   URL_COUNTRY: `${API_ROOT}/v2/name`,
   URL_COUNTRIES: `${API_ROOT}/v2/all`,
-  URL_REGISTER: `${API_ROOT_AUTH}/users`
+  URL_REGISTER: `${API_ROOT_USERS}/users`,
+  URL_SIGNIN: `${API_ROOT_USERS_JWT}/auth/login`
 };
 
 export const globalViewStates = {
@@ -12,7 +14,7 @@ export const globalViewStates = {
   LOADING: 'LOADING',
   ERROR: 'ERROR',
   DONE: 'DONE',
-  REDIRECT_TO_DASHBOARD: 'REDIRECT_TO_DASHBOARD',
+  REDIRECT: 'REDIRECT',
 };
 
 export const countryColumns = ['flag', 'name', 'capital', 'region'];

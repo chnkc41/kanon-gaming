@@ -1,10 +1,3 @@
-/**
- *   _|_
- *  /@-@\ Copyright © OpsBeacon, Inc.
- *  \ - /    All rights reserved.
- *   };{
- */
-
 import React, { useEffect, useState } from 'react';
 
 const NavigationTop = () => {
