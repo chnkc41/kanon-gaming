@@ -119,7 +119,7 @@ const Login = () => {
         </div>
 
         <span className="block w-full rounded-md shadow-sm">
-          <button className="btn-login" onClick={onFormSubmit}>
+          <button className="btn-main" onClick={onFormSubmit}>
             Sign In
           </button>
         </span>

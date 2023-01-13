@@ -172,7 +172,7 @@ const Register = () => {
 
         <div>
           <span className="block w-full rounded-md shadow-sm">
-            <button className="btn-login" onClick={onFormSubmit}>
+            <button className="btn-main" onClick={onFormSubmit}>
               Register
             </button>
           </span>
