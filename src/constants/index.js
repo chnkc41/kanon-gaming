@@ -9,16 +9,6 @@ export const urls = {
   URL_SIGNIN: `${API_ROOT_USERS_JWT}/auth/login`
 };
 
-export const globalViewStates = {
-  DEFAULT: 'DEFAULT',
-  LOADING: 'LOADING',
-  ERROR: 'ERROR',
-  DONE: 'DONE',
-  REDIRECT: 'REDIRECT'
-};
-
-export const countryColumns = ['flag', 'name', 'capital', 'region'];
-
 export const menu = [
   {
     to: 'question1',
@@ -34,16 +24,26 @@ export const menu = [
   },
   {
     to: 'question4',
-    name: 'Question 4 - Register'
+    name: 'Question 4 - Sign Up'
   },
   {
     to: 'question5',
-    name: 'Question 5 - Sign up'
+    name: 'Question 5 - Sign in'
   },
   {
     to: 'question6',
     name: 'Question 6 - Game'
   }
 ];
+
+export const globalViewStates = {
+  DEFAULT: 'DEFAULT',
+  LOADING: 'LOADING',
+  ERROR: 'ERROR',
+  DONE: 'DONE',
+  REDIRECT: 'REDIRECT'
+};
+
+export const countryColumns = ['flag', 'name', 'capital', 'region'];
 
 export const fruits = ['cherry', 'apple', 'banana', 'lemon'];
