@@ -114,7 +114,7 @@
 }
 
 .input-borderless {
-  @apply w-28 pl-2 pt-2 pb-1.5 sm:leading-5 bg-transparent cursor-pointer text-sm dark:text-gray-300 border-b outline-none border-sky-500 focus:dark:border-cyan-800;
+  @apply w-28 pl-2 pt-2 pb-1.5 sm:leading-5 bg-transparent cursor-pointer text-sm dark:text-gray-300 border-b outline-none border-orange-500 focus:dark:border-cyan-800;
 }
 
 .btn-basic {
@@ -124,10 +124,16 @@
 
 .btn-main-outline {
   @apply inline-flex items-center justify-center text-sm py-1.5 px-3 leading-5 rounded-md font-bold
-    bg-white focus:outline-none ease-out text-center cursor-pointer text-sky-600 hover:text-sky-500 border border-sky-400;
+    bg-white focus:outline-none ease-out text-center cursor-pointer text-orange-600 hover:text-orange-500 border border-orange-400;
 }
 
-.btn-login { 
-  @apply w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-sky-500
-  hover:bg-sky-600 focus:outline-none focus:border-sky-600 active:bg-sky-400 transition duration-150 ease-out;
+.btn-main { 
+  @apply w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500
+  hover:bg-orange-600 focus:outline-none focus:border-orange-600 active:bg-orange-400 transition duration-150 ease-out;
+}
+
+/* Game */
+
+.game-col { 
+  @apply bg-purple-900 w-24 h-16 text-xl rounded-l shadow-lg text-purple-200 grid place-items-center
 }

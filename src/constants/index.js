@@ -14,7 +14,7 @@ export const globalViewStates = {
   LOADING: 'LOADING',
   ERROR: 'ERROR',
   DONE: 'DONE',
-  REDIRECT: 'REDIRECT',
+  REDIRECT: 'REDIRECT'
 };
 
 export const countryColumns = ['flag', 'name', 'capital', 'region'];
@@ -45,3 +45,5 @@ export const menu = [
     name: 'Question 6 - Game'
   }
 ];
+
+export const fruits = ['cherry', 'apple', 'banana', 'lemon'];
