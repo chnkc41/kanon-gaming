@@ -7,8 +7,10 @@ import * as Toast from 'components/toast/Toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { logUserIn } from './io';
 import RequiredField from 'components/toolbox/RequiredField';
+import { changeUserRole } from 'redux/actions/userActions';
+import { connect } from 'react-redux';
 
-const Login = () => {
+const Login = ({ changeUserRole, ...props }) => {
   const [viewState, setViewState] = useState(globalViewStates.DEFAULT);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -54,6 +56,8 @@ const Login = () => {
         Toast.error('Please check your email and password.');
         return;
       } else {
+        const activeUser = {user: email }
+        changeUserRole(activeUser);
         Toast.success('I have added the token to sessionStorage. You can check the sessionStorage');
         sessionStorage.setItem('userToken', payload);
 
@@ -139,5 +143,15 @@ const Login = () => {
     </div>
   );
 };
+  
+function mapStateToProps(state) {
+  return {
+    // userRole: state.userReducer
+  };
+}
 
-export default Login;
+const mapDispatchToProps = {
+  changeUserRole
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

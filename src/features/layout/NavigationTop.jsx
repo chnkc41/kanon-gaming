@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
-const NavigationTop = () => {
+const NavigationTop = ({ ...props }) => {
   const [themeMode, setThemeMode] = useState();
-  const [showOptions, setShowOptions] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem('dark')) {
@@ -17,10 +17,6 @@ const NavigationTop = () => {
       ? localStorage.setItem('dark', true)
       : localStorage.removeItem('dark');
     setThemeMode(!themeMode);
-  };
-
-  const handleClickProfile = () => {
-    setShowOptions(!showOptions);
   };
 
   return (
@@ -151,39 +147,21 @@ const NavigationTop = () => {
             </span>
           </button>
 
-          <div>
-            <div
-              onClick={handleClickProfile}
-              className="relative flex justify-center items-center border-l  border-slate-200 ml-4 px-4 dark:border-slate-800 cursor-pointer overflow-hidden"
+          <div className="relative flex justify-center items-center border-l  border-slate-200 ml-4 px-4 dark:border-slate-800 cursor-pointer overflow-hidden">
+            <span className="inline-block h-8 w-8 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 mr-2">
+              <svg className="h-full w-full text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </span>
+            <span
+              className="hidden sm:flex flex-col text-sm text-center"
+              style={{ maxWidth: '11rem' }}
             >
-              <span className="inline-block h-8 w-8 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-700 mr-2">
-                <svg
-                  className="h-full w-full text-gray-500"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
+              <span className="text-xs text-gray-700 dark:text-gray-400">Welcome</span>
+              <span className="text-sm text-teal-600 dark:text-teal-400 font-semibold ">
+                {props.userRole.user || ''}
               </span>
-              <span
-                className="hidden sm:flex flex-col text-sm text-center"
-                style={{ maxWidth: '11rem' }}
-              >
-                <span className="text-xs text-gray-700 dark:text-gray-400">Welcome</span>
-                <span className="text-sm text-teal-600 dark:text-teal-400 font-semibold ">
-                  XXX USER
-                </span>
-              </span>
-            </div>
-            {showOptions && (
-              <div className="origin-top-right absolute right-0 mt-2 w-44 rounded-md shadow-lg bg-gray-50 dark:bg-slate-900 ring-1 ring-black ring-opacity-5 focus:outline-none p-3 space-y-2">
-                {/* <Link className='text-sm flex items-center px-3 rounded hover:bg-gray-100 py-1 transition-colors bg-teal-100 text-teal-500 hover:bg-teal-200'>
-                    Profil
-                  </Link> */}
-                {/* <Logout /> */}
-                {/* LOGOUT */}
-              </div>
-            )}
+            </span>
           </div>
         </div>
       </div>
@@ -191,4 +169,9 @@ const NavigationTop = () => {
   );
 };
 
-export default NavigationTop;
+function mapStateToProps(state) {
+  return {
+    userRole: state.userReducer
+  };
+}
+export default connect(mapStateToProps)(NavigationTop);
