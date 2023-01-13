@@ -18,6 +18,10 @@ Go to api folder.
 Might need to run
 ### `npm audit fix`
 
+### Example User for login
+User:      nilson@email.com
+Passsword: nilson
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
