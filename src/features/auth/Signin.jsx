@@ -10,7 +10,7 @@ import RequiredField from 'components/toolbox/RequiredField';
 import { changeUserRole } from 'redux/actions/userActions';
 import { connect } from 'react-redux';
 
-const Login = ({ changeUserRole, ...props }) => {
+const Signin = ({ changeUserRole, ...props }) => {
   const [viewState, setViewState] = useState(globalViewStates.DEFAULT);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -154,4 +154,4 @@ const mapDispatchToProps = {
   changeUserRole
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);

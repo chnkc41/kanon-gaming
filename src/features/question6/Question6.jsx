@@ -89,9 +89,7 @@ const Question6 = () => {
           setMessage('You did not win! Try again, this might be your lucky try!');
         }
       }
-
-      console.log(test);
-
+  
       setGameLogs(test);
     }, 1000);
   };
@@ -119,13 +117,6 @@ const Question6 = () => {
     const bananaCoins = elementCounts.banana >= 3 ? 15 : 0 || elementCounts?.banana === 2 ? 5 : 0;
     const lemonCoins = elementCounts.lemon >= 3 ? 3 : 0;
     const winningCoins = cherryCoins + appleCoins + bananaCoins + lemonCoins;
-
-    // console.log(elementCounts);
-    // console.log(cherryCoins);
-    // console.log(appleCoins);
-    // console.log(bananaCoins);
-    // console.log(lemonCoins);
-    // console.log(winningCoins);
 
     return { winningCoins, elementCounts };
   };
