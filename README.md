@@ -18,7 +18,12 @@ Go to api folder.
 Might need to run
 ### `npm audit fix`
 
- 
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+
+
+NOTE: After creating a new user the "Json server + JWT Token" step should be run again.
+
+I use the json server from [this repo.](https://github.com/techiediaries/fake-api-jwt-json-server) to view it in your browser.
+
